@@ -2,6 +2,7 @@ package com.example.administrador.loginapp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 
@@ -39,5 +40,18 @@ public class BancoController {
             return "Registro inserido com sucesso";
         }
     }
+
+    public Cursor carregaDados(){
+        Cursor cursor;
+        String[] campos = {banco.id, banco.titulo};
+        db = banco.getReadableDatabase();
+        cursor = db.query(banco.tabela, campos, null, null, null, null, null, null);
+        if (cursor!=null){
+            cursor.moveToFirst();
+        }
+        db.close();
+        return cursor;
+    }
+
 }
 

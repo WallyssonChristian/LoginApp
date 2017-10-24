@@ -3,7 +3,11 @@
     android:id="@+id/Inser"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.administrador.loginapp.CadastroFilmeActivity">
+    tools:context="com.example.administrador.loginapp.CadastroFilmeActivity"
+    android:layout_marginBottom="@dimen/marginBottom"
+    android:layout_marginLeft="@dimen/marginLeft"
+    android:layout_marginRight="@dimen/marginRight"
+    android:layout_marginTop="@dimen/marginTop">
 
 
     <TextView

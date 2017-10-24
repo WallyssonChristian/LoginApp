@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class CriaBanco extends SQLiteOpenHelper {
     private static final String nome_Banco = "banco.db";
     protected static final String tabela = "filmes";
-    private static final String id = "_id";
+    protected static final String id = "_id";
     protected static final String titulo = "titulo";
     protected static final String categoria = "categoria";
     protected static final String classificacao = "classificacao";

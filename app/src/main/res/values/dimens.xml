@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="marginTop">10dp</dimen>
+    <dimen name="marginRight">10dp</dimen>
+    <dimen name="marginBottom">10dp</dimen>
+    <dimen name="marginLeft">10dp</dimen>
+
+    <dimen name="HalfMarginDefault">5dp</dimen>
+    <dimen name="HalfMarginLeft">5dp</dimen>
+    <dimen name="HalfMarginRight">5dp</dimen>
+    <dimen name="HalfMarginBottom">5dp</dimen>
+    <dimen name="HalfMarginTop">5dp</dimen>
+
+    <dimen name="LayoutHeightDefault">45dp</dimen>
+
+</resources>
