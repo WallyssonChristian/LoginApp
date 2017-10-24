@@ -20,9 +20,11 @@ public class CadastroFilmeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 BancoController crud = new BancoController(getBaseContext());
+                // Preenche as Variaveis
                 EditText tituloF = (EditText) findViewById(R.id.et_titulo);
                 EditText categoriaF = (EditText) findViewById(R.id.et_categoria);
                 EditText classificF = (EditText) findViewById(R.id.et_classific);
+                // Converte para String
                 String tituloString = tituloF.getText().toString();
                 String categoriaString = categoriaF.getText().toString();
                 String classificString = classificF.getText().toString();

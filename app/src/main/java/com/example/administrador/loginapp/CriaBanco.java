@@ -33,9 +33,7 @@ public class CriaBanco extends SQLiteOpenHelper {
     }
 
     // é o método responsável por atualizar o banco de dados com alguma informação estrutural que
-    // tenha sido alterada. Ele sempre é chamado quando uma atualização é necessária, para não ter
-    // nenhum tipo de inconsistência de dados entre o banco existente no aparelho e o novo que a
-    // aplicação irá utilizar.
+    // tenha sido alterada. Ele sempre é chamado quando uma atualização é necessária.
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS" + tabela);
