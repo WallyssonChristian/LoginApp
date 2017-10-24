@@ -42,10 +42,17 @@ public class BancoController {
     }
 
     public Cursor carregaDados(){
+        // salva as informações que são retornadas do banco de dados
         Cursor cursor;
-        String[] campos = {banco.id, banco.titulo};
+        // Array que armazena o que sera puxado do banco
+        String[] campos = {banco.id, banco.titulo, banco.categoria, banco.classificacao};
+        // .GetRead diz que sera apenas operação de leitura
         db = banco.getReadableDatabase();
+
         cursor = db.query(banco.tabela, campos, null, null, null, null, null, null);
+
+        // Antes do cursor ser retornado para ser tratado na interface do usuário, deve-se
+        // mover seu conteúdo para a primeira posição para que todos os dados sejam exibidos.
         if (cursor!=null){
             cursor.moveToFirst();
         }

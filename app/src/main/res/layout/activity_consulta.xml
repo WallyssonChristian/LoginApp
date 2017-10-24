@@ -9,12 +9,45 @@
     android:layout_marginRight="@dimen/marginRight"
     android:layout_marginTop="@dimen/marginTop">
 
+    <LinearLayout
+        android:id="@+id/ll_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-<ListView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/lv_filmes"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentStart="true" />
+        <TextView
+            android:id="@+id/tv_lay_tit_class"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/LayoutHeightHeader"
+            android:layout_margin="@dimen/HalfMarginDefault"
+            android:layout_weight="1"
+            android:text="ClassInd" />
+
+        <TextView
+            android:id="@+id/tv_lay_tit_nomefilme"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/LayoutHeightHeader"
+            android:layout_margin="@dimen/HalfMarginDefault"
+            android:layout_weight="1"
+            android:text="Titulo" />
+
+        <TextView
+            android:id="@+id/tv_lay_tit_categ"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/LayoutHeightHeader"
+            android:layout_margin="@dimen/HalfMarginDefault"
+            android:layout_weight="1"
+            android:text="Categoria" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_filmes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/ll_header"/>
+
 </RelativeLayout>
 

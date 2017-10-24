@@ -12,5 +12,6 @@
     <dimen name="HalfMarginTop">5dp</dimen>
 
     <dimen name="LayoutHeightDefault">45dp</dimen>
+    <dimen name="LayoutHeightHeader">25dp</dimen>
 
 </resources>
