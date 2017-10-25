@@ -17,7 +17,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CadastroActivity" />
+        <activity android:name=".CadastroUsuarioActivity" />
         <activity android:name=".CadastroFilmeActivity" />
         <activity android:name=".ConsultaActivity"></activity>
     </application>

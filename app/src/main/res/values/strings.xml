@@ -5,4 +5,10 @@
     <string name="email">E-Mail</string>
     <string name="senha">Senha</string>
 
+    <string-array name="spinner_opt">
+    <item>Adicionar</item>
+    <item>Editar</item>
+    <item>Deletar</item>
+    </string-array>
+
 </resources>
