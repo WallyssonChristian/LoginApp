@@ -19,7 +19,8 @@
         </activity>
         <activity android:name=".CadastroUsuarioActivity" />
         <activity android:name=".CadastroFilmeActivity" />
-        <activity android:name=".ConsultaActivity"></activity>
+        <activity android:name=".ConsultaActivity" />
+        <activity android:name=".EditaFilmeActivity"></activity>
     </application>
 
 </manifest>

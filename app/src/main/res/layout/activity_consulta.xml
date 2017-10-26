@@ -4,10 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.administrador.loginapp.ConsultaActivity"
-    android:layout_marginBottom="@dimen/marginBottom"
-    android:layout_marginLeft="@dimen/marginLeft"
-    android:layout_marginRight="@dimen/marginRight"
-    android:layout_marginTop="@dimen/marginTop">
+    android:layout_margin="@dimen/marginDefault">
 
     <LinearLayout
         android:id="@+id/ll_header"

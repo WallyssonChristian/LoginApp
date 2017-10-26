@@ -4,11 +4,14 @@
     <string name="cadastrar">Cadastrar</string>
     <string name="email">E-Mail</string>
     <string name="senha">Senha</string>
+    <string name="add">Adicionar</string>
+    <string name="edit">Editar</string>
+    <string name="delete">Deletar</string>
 
-    <string-array name="spinner_opt">
-    <item>Adicionar</item>
-    <item>Editar</item>
-    <item>Deletar</item>
+    <string-array name="category_op">
+        <item>Terror</item>
+        <item>Comedia</item>
+        <item>Ação</item>
     </string-array>
 
 </resources>

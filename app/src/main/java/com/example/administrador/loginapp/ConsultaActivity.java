@@ -1,6 +1,9 @@
 package com.example.administrador.loginapp;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AppCompatActivity;
@@ -8,21 +11,33 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import static com.example.administrador.loginapp.R.layout.layout_dialog;
+
 public class ConsultaActivity extends AppCompatActivity {
     private ListView lista;
-    Spinner spinner;
+
+    Button bt_add;
+    Button bt_edit;
+    Button bt_delete;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_consulta);
 
+//        bt_edit = (Button) findViewById(R.id.bt_edit);
+//        bt_add = (Button) findViewById(R.id.bt_add);
+//        bt_delete = (Button) findViewById(R.id.bt_delete);
+
         // Cria instancia de bancoController
         BancoController crud = new BancoController(getBaseContext());
-        Cursor cursor = crud.carregaDados();
+        final Cursor cursor = crud.carregaDados();
 
         // Seleciona Quais informações vai receber
         String[] nomeCampos = new String[] {CriaBanco.id, CriaBanco.titulo, CriaBanco.categoria, CriaBanco.classificacao};
@@ -43,45 +58,52 @@ public class ConsultaActivity extends AppCompatActivity {
         // Joga na tela
         lista.setAdapter(adapter);
 
-//        lista.setOnLongClickListener(new View.OnLongClickListener() {
-//            @Override
-//            public boolean onLongClick(View v) {
-//                showOptions();
-//                return true;
-//
-//            }
-//        });
 
         lista.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                showOptions(position);
+                String codigoQ;
+                cursor.moveToPosition(position);
+                codigoQ = cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.id));
+                showOptions(codigoQ);
                 return true;
             }
         });
 
     }
 
-    public void showOptions(int itemPosition){
+    public void showOptions(final String id) {
         AlertDialog.Builder builder = new AlertDialog.Builder(ConsultaActivity.this);
         builder.setView(R.layout.layout_dialog);
 
+        builder.setPositiveButton(R.string.delete, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent telaDeletar = new Intent(ConsultaActivity.this, EditaFilmeActivity.class);
+                telaDeletar.putExtra("codigo", id);
+                startActivity(telaDeletar);
+                finish();
+            }
+        });
 
-        spinner = (Spinner) findViewById(R.id.spinner_menu);
+        builder.setNeutralButton(R.string.edit, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent telaAlterar = new Intent(ConsultaActivity.this, EditaFilmeActivity.class);
+                telaAlterar.putExtra("codigo", id);
+                startActivity(telaAlterar);
+                finish();
+            }
+        }) ;
 
-            ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                    R.array.spinner_opt, android.R.layout.simple_spinner_item);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        if (spinner != null) {
-            spinner.setAdapter(adapter);
-        } else {
-            Toast.makeText(this, "NoWay", Toast.LENGTH_SHORT).show();
-        }
-
+//        builder.setNegativeButton(R.string.delete, new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//
+//            }
+//        });
 
         builder.create();
         builder.show();
     }
-
-
 }

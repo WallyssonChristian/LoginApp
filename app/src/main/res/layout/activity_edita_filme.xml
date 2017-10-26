@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:padding="@dimen/marginDefault"
+tools:context="com.example.administrador.loginapp.EditaFilmeActivity"
+android:id="@+id/Alter">
+
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:text="Titulo:"
+    android:id="@+id/tv_edit_titulo"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:layout_marginTop="75dp" />
+
+<EditText
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/et_edit_titulo"
+    android:layout_below="@+id/tv_edit_titulo"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/tv_edit_categoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/et_edit_titulo"
+        android:layout_marginTop="45dp"
+        android:text="Categoria:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+<EditText
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/et_edit_categoria"
+    android:layout_below="@+id/tv_edit_categoria"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:layout_alignRight="@+id/et_edit_titulo"
+    android:layout_alignEnd="@+id/et_edit_titulo" />
+
+    <TextView
+        android:id="@+id/tv_edit_classific"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/et_edit_categoria"
+        android:layout_marginTop="39dp"
+        android:text="Classificação:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+<EditText
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/et_edit_classific"
+    android:layout_below="@+id/tv_edit_classific"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/bt_edit_alterar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/et_edit_classific"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/et_edit_classific"
+        android:layout_below="@+id/et_edit_classific"
+        android:layout_marginTop="51dp"
+        android:text="Alterar" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deletar"
+        android:id="@+id/bt_delete"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/bt_edit_alterar"
+        android:layout_alignEnd="@+id/bt_edit_alterar" />
+</RelativeLayout>
